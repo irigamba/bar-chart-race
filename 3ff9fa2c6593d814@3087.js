@@ -231,7 +231,7 @@ function _color() {
   const colorByName = new Map([
     ["Technology",      "#F0C659"], 
     ["Healthcare",      "#A0C2C9"], 
-    ["Financial Services","#ADB449"],
+    ["Financial Services","#0051a5"],
     ["Real Estate",     "#E0974B"],
     ["Energy",          "#8E979B"],
     ["Industrials",     "#457275"],
