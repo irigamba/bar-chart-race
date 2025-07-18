@@ -114,7 +114,7 @@ new Map(nameframes.flatMap(([, data]) => d3.pairs(data)))
 function _bars(n,color,y,x,prev,next){return(
 function bars(svg) {
   let bar = svg.append("g")
-      .attr("fill-opacity", 0.6)
+      .attr("fill-opacity", 1)
     .selectAll("rect");
 
   return ([date, data], transition) => bar = bar
@@ -155,7 +155,7 @@ function labels(svg) {
         .attr("dy", "-0.25em")
         .text(d => d.name)
         .call(text => text.append("tspan")
-          .attr("fill-opacity", 0.7)
+          .attr("fill-opacity", 1)
           .attr("font-weight", "normal")
           .attr("x", -6)
           .attr("dy", "1.15em")),
@@ -227,15 +227,23 @@ function _formatDate(d3){return(
 d3.utcFormat("%Y")
 )}
 
-function _color(d3,data)
-{
-  const scale = d3.scaleOrdinal(d3.schemeTableau10);
-  if (data.some(d => d.category !== undefined)) {
-    const categoryByName = new Map(data.map(d => [d.name, d.category]))
-    scale.domain(categoryByName.values());
-    return d => scale(categoryByName.get(d.name));
-  }
-  return d => scale(d.name);
+function _color() {
+  const colorByName = new Map([
+    ["Technology",      "#F0C659"], 
+    ["Healthcare",      "#A0C2C9"], 
+    ["Financial Services","#ADB449"],
+    ["Real Estate",     "#E0974B"],
+    ["Energy",          "#8E979B"],
+    ["Industrials",     "#457275"],
+    ["Sustainability",  "#57B3D9"],
+    ["Telecom",         "#C2BDB1"],
+    ["Education",       "#E7EEF1"],
+    ["Defense",         "#F7C750"],
+    ["Biotech",         "#4A4E51"],
+    ["Infrastructure",  "#B9AE7E"] 
+  ]);
+
+  return d => colorByName.get(d.name) || "#ccc"; 
 }
 
 
