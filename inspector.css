@@ -12,6 +12,21 @@
   --syntax_key: #6636b4;
   --mono_fonts: 82%/1.5 Menlo, Consolas, monospace;
 }
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+  font-family: "RBCDisplay", sans-serif;
+}
+
+#bar-chart-race {
+  font-family: "RBCDisplay", sans-serif;
+}
+
 .observablehq--collapsed,
 .observablehq--expanded,
 .observablehq--function,
