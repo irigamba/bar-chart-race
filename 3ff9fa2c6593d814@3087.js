@@ -239,7 +239,7 @@ function _color() {
     ["Telecom",         "#C2BDB1"],
     ["Education",       "#E7EEF1"],
     ["Defense",         "#F7C750"],
-    ["Biotech",         "#4A4E51"],
+    ["Biotech",         "#ADB449"],
     ["Infrastructure",  "#B9AE7E"] 
   ]);
 
